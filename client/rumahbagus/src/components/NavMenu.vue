@@ -4,20 +4,8 @@
          <div class="layout-logo"></div>
          <div class="layout-nav">
              <Menu-item name="1">
-                 <Icon type="ios-navigate"></Icon>
-                 Home
-             </Menu-item>
-             <Menu-item name="2">
-                 <Icon type="ios-keypad"></Icon>
-                 Test
-             </Menu-item>
-             <Menu-item name="3">
                  <Icon type="ios-analytics"></Icon>
-                 Test
-             </Menu-item>
-             <Menu-item name="4">
-                 <Icon type="ios-paper"></Icon>
-                 Test
+                 Home
              </Menu-item>
          </div>
     </Menu>

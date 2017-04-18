@@ -22,11 +22,15 @@ export const mutations = {
   },
   POST_HOUSE(state, payload) {
     state.houses.push(payload)
+  },
+  DELETE_HOUSE(state,payload) {
+    let index = state.houses.findIndex(val => val._id == payload)
+    state.houses.splice(index,1)
   }
 }
 
 export const actions = {
-  getHouses({commit},houses) {
+  getHouses({commit}) {
     axios.get('http://localhost:3000/houses')
          .then(function(res) {
            console.log(res.data);
@@ -34,7 +38,7 @@ export const actions = {
          })
     // commit('GET_HOUSES')
   },
-  postHouse({commit},house) {
+  postHouse({commit}) {
     axios.post('http://localhost:3000/houses', state.newHouse)
          .then(function(res) {
            if(res.data.success) {
@@ -42,6 +46,13 @@ export const actions = {
            }
          })
     // commit('POST_HOUSE',house)
+  },
+  deleteHouse({commit},id) {
+    let self = this
+    axios.delete(`http://localhost:3000/houses/${id}`)
+         .then(function(res) {
+           commit('DELETE_HOUSE',id)
+         })
   }
 }
 
