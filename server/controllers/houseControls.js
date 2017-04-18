@@ -23,9 +23,9 @@ module.exports = {
 
     })
 
-    newHouse.save(function(err,results) {
+    newHouse.save(function(err,result){
       if(!err) {
-        res.send({success:true, msg:'create success', data:results})
+        res.send({success:true, msg:'create success', data:result})
       } else {
         res.send({success:false, msg:err})
       }

@@ -1,17 +1,52 @@
 <template lang="html">
-
   <div class="layout">
     <div class="layout-content">
-        CONTENT
+        <gmap-map
+          :center="center"
+          :zoom="7"
+
+          style="width:100%; height:300px">
+        </gmap-map>
+        <ul>
+          <li v-for="house in houses">Title: {{house.title}} | description: {{house.description}}</li>
+        </ul>
     </div>
-    <div class="layout-copy">
-         2017 &copy; Jancok
+    <div class="layout-content">
+      <add-form></add-form>
     </div>
   </div>
 </template>
 
 <script>
+import AddForm from './AddForm'
 export default {
+  components: {
+    AddForm
+  },
+  data() {
+    return {
+      center: {lat:10.0, lng:10.0},
+      markers:''
+
+    }
+  },
+  methods: {
+    mapRclicked (mouseArgs) {
+      const createdMarker = this.addMarker()
+      createdMarker.position.lat = mouseArgs.latLng.lat()
+      createdMarker.position.lng = mouseArgs.latLng.lng()
+    }
+  },
+  mounted() {
+    this.$store.dispatch('getHouses')
+    // console.log('ini house------',this.houses);
+  },
+  computed: {
+    houses(){
+      return this.$store.getters.houses
+    }
+  }
+
 }
 </script>
 
