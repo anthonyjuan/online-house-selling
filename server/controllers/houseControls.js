@@ -17,7 +17,7 @@ module.exports = {
       owner: req.body.owner,
       image: req.body.image,
       loc: {
-        lng: req.body.long,
+        lng: req.body.lng,
         lat: req.body.lat
       }
 
@@ -50,8 +50,8 @@ module.exports = {
         owner: req.body.owner,
         image: req.body.image,
         loc: {
-          lng: req.body.long,
-          lat: req.body.lat
+          lng: req.body.loc.lng,
+          lat: req.body.loc.lat
         }
       },
       function(err) {

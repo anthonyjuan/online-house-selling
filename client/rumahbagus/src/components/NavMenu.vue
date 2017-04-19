@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
     <Menu mode="horizontal" theme="dark" active-name="1">
-         <div class="layout-logo"></div>
+
          <div class="layout-nav">
              <Menu-item name="1">
                  <Icon type="ios-analytics"></Icon>
@@ -22,20 +22,7 @@ export default {
     border: 1px solid #d7dde4;
     background: #f5f7f9;
 }
-.layout-logo{
-    width: 100px;
-    height: 30px;
-    background: #5b6270;
-    border-radius: 3px;
-    float: left;
-    position: relative;
-    top: 15px;
-    left: 20px;
-}
-.layout-nav{
-    width: 420px;
-    margin: 0 auto;
-}
+
 .layout-assistant{
     width: 300px;
     margin: 0 auto;

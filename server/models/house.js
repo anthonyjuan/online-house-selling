@@ -9,8 +9,8 @@ let houseSchema = new Schema({
   owner: String,
   image: String,
   loc: {
-    lng: Number,
-    lat: Number
+    lat: Number,
+    lng: Number
   }
 })
 
